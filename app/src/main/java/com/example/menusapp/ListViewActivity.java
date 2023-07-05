@@ -15,6 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**helped in creating a context menu**/
 public class ListViewActivity extends AppCompatActivity {
     private ListView mainListView;
     private ArrayAdapter<String> listAdapter;
