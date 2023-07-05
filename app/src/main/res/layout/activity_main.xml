@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.example.menusapp.MainActivity">
+
 
     <TextView
         android:id="@+id/textTitle"
@@ -12,30 +14,36 @@
         android:layout_height="wrap_content"
         android:text="Android Fundamentals - Menus"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnActionModeMenu"
+        android:text="Show Action Mode Menu"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="Show Action Mode Menu"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="313dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnPopupMenu"
+        android:text="Show Popup Menu"
+        app:layout_constraintTop_toBottomOf="@id/btnActionModeMenu"
+        android:onClick="showPopupMenu"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnListView"
+        android:text="Show List View Activity"
+        app:layout_constraintTop_toBottomOf="@id/btnPopupMenu"
+        android:onClick="showListViewActivity"
         android:padding="10dp"
-        android:onClick="showPopupMenu"
-        android:text="Show Popup Menu"
-        app:layout_constraintTop_toBottomOf="@+id/btnActionModeMenu"
-        tools:layout_editor_absoluteX="120dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

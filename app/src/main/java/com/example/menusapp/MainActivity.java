@@ -3,6 +3,7 @@ package com.example.menusapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -139,5 +140,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             default:
                 return false;
         }
+    }
+
+    public void showListViewActivity(View view) {
+        startActivity(new Intent(MainActivity.this, ListViewActivity.class));
     }
 }
