@@ -69,9 +69,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 if (mActionMode != null) {
                     return false;
                 }
-
-                mActionMode = startSupportActionMode((androidx.appcompat.view.ActionMode.Callback) mActionModeCallback);
-                return true;
+                else {
+                    mActionMode = startSupportActionMode((androidx.appcompat.view.ActionMode.Callback) mActionModeCallback);
+                    return true;
+                }
             }
         });
     }
