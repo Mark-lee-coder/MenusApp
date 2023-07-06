@@ -85,15 +85,26 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        item.setChecked(!item.isChecked()); //persists the selection that the user made
+
         switch(item.getItemId()) {
             case R.id.menuItem1:
                 Toast.makeText(this, "Menu Item 1 Clicked", Toast.LENGTH_SHORT).show();
+                if (item.isChecked()) {
+                    Toast.makeText(this, "Item checked", Toast.LENGTH_SHORT).show();
+                }
                 return true;
             case R.id.menuItem2:
                 Toast.makeText(this, "Menu Item 2 Clicked", Toast.LENGTH_SHORT).show();
+                if (item.isChecked()) {
+                    Toast.makeText(this, "Item checked", Toast.LENGTH_SHORT).show();
+                }
                 return true;
             case R.id.menuItem3:
                 Toast.makeText(this, "Menu Item 3 Clicked", Toast.LENGTH_SHORT).show();
+                if (item.isChecked()) {
+                    Toast.makeText(this, "Item checked", Toast.LENGTH_SHORT).show();
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
