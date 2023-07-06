@@ -76,10 +76,28 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         });
     }
 
+    /**intent based menus*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "Check out the menu course app!");
+
+        //Search and populate the menu with acceptable offering applications.
+        menu.addIntentOptions(
+                R.id.intentGroup, //Menu group to which the new items will be added
+                0, //Unique item ID (none)
+                0, //Order of the items (none)
+                this.getComponentName(), //The current activity name
+                null, //Specific items to place first (none)
+                intent, //Intent created above that describes our requirements
+                0, //Additional flags to control items (none)
+                null //Array of MenuItems that correlate to specific items (none)
+        );
+
         return true;
     }
 
